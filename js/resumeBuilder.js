@@ -31,8 +31,8 @@ $("#topContacts").append(formattedWelcomeMsg);
 
 $("#header").append(HTMLskillsStart);
 $("#skills").append(formattedSkills);
-*/
 
+*/
 // ============================
 
 var work =
@@ -168,7 +168,7 @@ var projects = {
         "image" : ""
     }
 
-}
+} ;
 
 
 

@@ -123,13 +123,25 @@ var work = {
         "display" : "function()"
 } ;
 
+function displayWork() {
+    for (job in work.jobs) {
+        $("#workExperience").append(HTMLworkStart);
 
-for (job in work.jobs) {
-    $("#workExperience").append(HTMLworkStart);
-    var formattedEmployer = HTMLworkEmployer.replace("%data%" , work.jobs[job].employer) ;
-    var formattedTitle = HTMLworkTitle.replace("%data%" , work.jobs[job].title) ;
-    $(".work-entry:last").append(formattedEmployer).append(formattedTitle) ;
-} ;
+        var formattedEmployer = HTMLworkEmployer.replace("%data%" , work.jobs[job].employer) ;
+        var formattedTitle = HTMLworkTitle.replace("%data%" , work.jobs[job].title) ;
+        var concatFormattedEmployerAndTitle = formattedEmployer + formattedTitle ;
+        var formattedDates = HTMLworkDates.replace("%data%" , work.jobs[job].dates) ;
+        var formattedDescription = HTMLworkDescription.replace("%data%" , work.jobs[job].description) ;
+
+        $(".work-entry:last")
+            .append(concatFormattedEmployerAndTitle)
+            .append(formattedDates)
+            .append(formattedDescription)
+            ;
+    }
+}
+
+displayWork() ;
 
 // code examples:
 // var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -174,7 +186,7 @@ var education = {
                 "location": "Montreal" ,
                 "degree": "Bachelor of Fine Arts" ,
                 "dates": 1980 ,
-                "majors": ["Film Aesthetics" , "Film Production" , "Performance Art" ]
+                "majors": ["Film Aesthetics" , "Film Production" , "Performance Art" ] ,
                 "url" : "https://www.concordia.ca/finearts.html"
             } ,
             {

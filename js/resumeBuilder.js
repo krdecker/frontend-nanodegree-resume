@@ -35,17 +35,17 @@ var bio = {
     "skills" : [ "  Python" , "  JavaScript" , "  jQuery" , "  HTML/CSS" ] ,
     "bioPic" : "images/krd.png" ,
 
-    "display" : "function()"
+    "display" : function() {}
 } ;
 
-/*
+
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
-var formattedSkills = HTMLskills.replace("%data%", bio.skills);
+//var formattedSkills = HTMLskills.replace("%data%", bio.skills);
 
 
 
@@ -57,8 +57,7 @@ $("#topContacts").append(formattedBioPic);
 $("#topContacts").append(formattedWelcomeMsg);
 
 
-$("#skills").append(formattedSkills);
-*/
+//$("#skills").append(formattedSkills);
 
 if (bio.skills.length !== 0) {
    $("#header").append(HTMLskillsStart);
@@ -92,15 +91,15 @@ var work = {
                 "location": "Vancouver",
                 "dates":  "1992-2015",
                 "description": "As member of a team, install and operate set lighting for major studio and location shooting. See resume at [link] (http://www.imdb.com/name/nm0213858/) imdb.com",
-//                "url": "http://www.iatse.com"
+                //                "url": "http://www.iatse.com"
             },
             {
                 "employer": "Vancouver Film School",
                 "title": "Head Instructor: Film & Video Production",
                 "location": "Vancouver",
                 "dates": "1989-1992" ,
-                "description": "Teach courses and conduct workshops on methods and means of film & video production. Organise programme, including booking instructors and courses.",
-//                "url": "http://vfs.edu"
+                "description": "Teach courses and conduct workshops on methods and means of film & video production. Organise programme, including schedule instructors and courses.",
+                //                "url": "http://vfs.edu"
             },
             {
                 "employer": "Concordia University, Faculty of Fine Arts",
@@ -108,7 +107,7 @@ var work = {
                 "location": "Montreal",
                 "dates": "1982-1988",
                 "description": "Teach courses on film/video art and writing for same.",
-//                "url": "https://www.concordia.ca/"
+                //                "url": "https://www.concordia.ca/"
             },
             {
                 "employer": "Logo Computer Systems Inc.",
@@ -116,7 +115,7 @@ var work = {
                 "title": "Logo Developer",
                 "dates": "1983-1984",
                 "description": "Develop application in Logo to teach children use of keyboard.",
-//                "url": "http://www.imdb.com/name/nm0213858/"
+                //                "url": "http://www.imdb.com/name/nm0213858/"
             }
         ] ,
 
@@ -125,7 +124,7 @@ var work = {
 
 function displayWork() {
     for (job in work.jobs) {
-        $("#workExperience").append(HTMLworkStart);
+        $("#workExperience").append(HTMLworkStart); // installs '.work-entry' div
 
         var formattedEmployer = HTMLworkEmployer.replace("%data%" , work.jobs[job].employer) ;
         var formattedTitle = HTMLworkTitle.replace("%data%" , work.jobs[job].title) ;
@@ -243,7 +242,7 @@ var education = {
 /*
 * `projects` contains:
 
-            projects: array of objects with
+5            projects: array of objects with
                   title: string
                   dates: string (works with a hyphen between them)
                   description: string
@@ -258,32 +257,79 @@ var projects = {
         {
             "title" : "Orange Udacity Mug" ,
             "dates" : "2014-15" ,
-            "description" : "" ,
-            "images" : [ "" , "" , "" ]
+            "description" : "Project to create a static web page in html/css in the exact likeness of a given graphic mock-up." ,
+            "images" : [ "images/mug.png" ]//, "images/page-mock.png" ]
         } ,
 
         {
             "title" : "KRD Portfolio" ,
-            "dates" : "" ,
-            "description" : "" ,
-            "images" : [ " " ]
+            "dates" : "2014-15" ,
+            "description" : "A portfolio of projects." ,
+            "images" : [ "" ]
         } ,
 
         {
-            "title" : "" ,
-            "dates" : "" ,
-            "description" : "" ,
-            "image" : [""]
+            "title" : "DADA soulève TOUT" ,
+            "dates" : "2012" ,
+            "description" : "A mainly static web-site deployed on Google App Engine." ,
+            "images" : [""]
+            // "url" : "http://international-dada.appspot.com/dadaman/manifesto.html"
         }
 
-    ] ,
+    ]
 
-    "display" : "function()"
-} ;
+}
+
+/*
+var HTMLprojectStart = '<div class="project-entry"></div>';
+var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectDates = '<div class="date-text">%data%</div>';
+var HTMLprojectDescription = '<p><br>%data%</p>';
+var HTMLprojectImage = '<img src="%data%">';
+*/
+
+projects.display = function() {
+//function displayProjects() {
+    //console.log(projects.projects[1].title);
+    for(var project in projects.projects) {
+        //var curProject = projects.projects[project];
+        console.log(project);
+        $('#projects').append(HTMLprojectStart);
+        var formattedTitle = HTMLprojectTitle.replace("%data%" , projects.projects[project].title) ;
+        console.log(formattedTitle);
+        $('.project-entry:last').append(formattedTitle);
+/*        var formattedDates = HTMLprojectDates.replace("%data%" , projects.projects[project].dates) ;
+        $('.project-entry').append(formattedDates);
+        var formattedDescription = HTMLprojectDescription.replace("%data%" , projects.projects[project].description) ;
+        $('.project-entry').append(formattedDescription);*/
+
+/*        for(var image in projects.projects[project].images) {
+            var formattedImage = HTMLprojectImage.replace("%data%" , projects.projects[project].images[image]) ;
+            $('.project-entry').append(formattedImage);
+        }*/
+
+    }
+
+}
+
+projects.display();
+
+//displayProjects();
 
 
+$('#main').append(internationalizeButton);
 
+function inName(name) {
+    //var name = nameString;
+    var spIndex = name.trim().indexOf(' ');
 
+    name = name[0].toUpperCase() + name.slice(1, spIndex ) + ' ' + name.slice(spIndex+1).toUpperCase();
 
+    return name;
+}
+/*"Gozer the Traveller - he will come in one of the pre-chosen forms. During the rectification of the Vuldronaii,
+the Traveller came as a large and moving Torb! Then, during the third reconciliation of the last of the Meketrex
+supplicants, they chose a new form for him - that of a giant Sloar!
+Many Shubs and Zuuls knew what it was to be roasted in the depths of a Sloar that day, I can tell you!"*/
 
 

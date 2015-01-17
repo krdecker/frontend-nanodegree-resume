@@ -298,15 +298,15 @@ projects.display = function() {
         var formattedTitle = HTMLprojectTitle.replace("%data%" , projects.projects[project].title) ;
         console.log(formattedTitle);
         $('.project-entry:last').append(formattedTitle);
-/*        var formattedDates = HTMLprojectDates.replace("%data%" , projects.projects[project].dates) ;
-        $('.project-entry').append(formattedDates);
+        var formattedDates = HTMLprojectDates.replace("%data%" , projects.projects[project].dates) ;
+        $('.project-entry:last').append(formattedDates);
         var formattedDescription = HTMLprojectDescription.replace("%data%" , projects.projects[project].description) ;
-        $('.project-entry').append(formattedDescription);*/
+        $('.project-entry:last').append(formattedDescription);
 
-/*        for(var image in projects.projects[project].images) {
+        for(var image in projects.projects[project].images) {
             var formattedImage = HTMLprojectImage.replace("%data%" , projects.projects[project].images[image]) ;
             $('.project-entry').append(formattedImage);
-        }*/
+        }
 
     }
 

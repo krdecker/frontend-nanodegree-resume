@@ -1,6 +1,6 @@
 
 //                   ===========
-//===================BIO SECTION=================
+//===================BIO BIO BIO=================
 //                   ===========
 
 /*
@@ -35,39 +35,40 @@ var bio = {
     "skills" : [ "  Python" , "  JavaScript" , "  jQuery" , "  HTML/CSS" ] ,
     "bioPic" : "images/krd.png" ,
 
-    "display" : function() {}
-} ;
+    display : function() {
 
-
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
-//var formattedSkills = HTMLskills.replace("%data%", bio.skills);
+        var formattedName = HTMLheaderName.replace("%data%", bio.name);
+        var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+        var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+        var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+        var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+        var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
+        //var formattedSkills = HTMLskills.replace("%data%", bio.skills);
 
 
 
-$("#header").prepend(formattedRole); // LIFO
-$("#header").prepend(formattedName);
-$("#topContacts").append(formattedEmail);
-$("#topContacts").append(formattedGitHub);
-$("#topContacts").append(formattedBioPic);
-$("#topContacts").append(formattedWelcomeMsg);
+        $("#header").prepend(formattedRole); // LIFO
+        $("#header").prepend(formattedName);
+        $("#topContacts").append(formattedEmail);
+        $("#topContacts").append(formattedGitHub);
+        $("#topContacts").append(formattedBioPic);
+        $("#topContacts").append(formattedWelcomeMsg);
 
 
-//$("#skills").append(formattedSkills);
+        //$("#skills").append(formattedSkills);
 
-if (bio.skills.length !== 0) {
-   $("#header").append(HTMLskillsStart);
-   // to do: loop thru skills array putting each in its own <li>
-   $("#skills").append( HTMLskills.replace("%data%", bio.skills) ) ;
-} ;
+        if (bio.skills.length !== 0) {
+           $("#header").append(HTMLskillsStart);
+           // to do: loop thru skills array putting each in its own <li>
+           $("#skills").append( HTMLskills.replace("%data%", bio.skills) ) ;
+        } ;
+    } // display func
+} ; // bio obj
 
-//                     ============
-// ====================WORK SECTION==================
-//                     ============
+
+//                     ==============
+// ====================WORK WORK WORK==================
+//                     ==============
 
 /*
 * `work` contains
@@ -140,7 +141,7 @@ function displayWork() {
     }
 }
 
-displayWork() ;
+
 
 // code examples:
 // var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -235,9 +236,11 @@ var education = {
 } ;
 
 
-//                 ================
-//=================PROJECTS SECTION================
-//                 ================
+
+
+//                               ================
+//===============================PROJECTS SECTION==========================
+//                               ================
 
 /*
 * `projects` contains:
@@ -302,17 +305,26 @@ projects.display = function() {
         $('.project-entry:last').append(formattedDates);
         var formattedDescription = HTMLprojectDescription.replace("%data%" , projects.projects[project].description) ;
         $('.project-entry:last').append(formattedDescription);
+        if (projects.projects[project].images.length > 0) {
+            for(var image in projects.projects[project].images) {
+                var formattedImage = HTMLprojectImage.replace("%data%" , projects.projects[project].images[image]) ;
+                $('.project-entry').append(formattedImage);
+            } // for (image
+        } // if (projects
+    } // for (project
+} // .display func
 
-        for(var image in projects.projects[project].images) {
-            var formattedImage = HTMLprojectImage.replace("%data%" , projects.projects[project].images[image]) ;
-            $('.project-entry').append(formattedImage);
-        }
 
-    }
 
-}
 
-projects.display();
+//                                  ===========
+//==================================TOP TOP TOP==================================
+//                                  ===========
+
+
+bio.display();
+displayWork() ;
+projects.display(); // invoke
 
 //displayProjects();
 
@@ -327,6 +339,10 @@ function inName(name) {
 
     return name;
 }
+
+
+$('#mapDiv').append(googleMap);
+
 /*"Gozer the Traveller - he will come in one of the pre-chosen forms. During the rectification of the Vuldronaii,
 the Traveller came as a large and moving Torb! Then, during the third reconciliation of the last of the Meketrex
 supplicants, they chose a new form for him - that of a giant Sloar!

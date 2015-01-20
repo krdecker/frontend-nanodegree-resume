@@ -256,6 +256,10 @@ var education = {
                                                             .replace('#' , this.onlineClasses[onlineClass].url);
                 var formattedOnlineSchool = HTMLonlineSchool.replace('%data%' , this.onlineClasses[onlineClass].school);
                 $('#education > h3').append(formattedOnlineTitle + formattedOnlineSchool);
+                var formattedonlineDate = HTMLonlineDates.replace('%data%' , this.onlineClasses[onlineClass].date);
+                $('#education > h3').append(formattedonlineDate);
+                var formattedOnlineURL = HTMLonlineURL.replace('%data%', this.onlineClasses[onlineClass].url);
+                $('#education > h3').append(formattedOnlineURL);
             } // for onlineClasses loop
         } //display func
 } // education obj

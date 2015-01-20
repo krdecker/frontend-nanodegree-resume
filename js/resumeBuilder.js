@@ -172,21 +172,21 @@ function displayWork() {
 
 var education = {
 
-        "schools": [
+        "schools" : [
             {
-                "name": "Concordia University" ,
-                "location": "Montreal" ,
-                "degree": "Master of Arts" ,
-                "majors": ["Creative Writing" , "Computer Art: Coding in Pascal & C"] ,
-                "dates": 1982 ,
+                "name" : "Concordia University" ,
+                "location" : "Montreal" ,
+                "degree" : "Master of Arts" ,
+                "majors" : ["Creative Writing" , "Computer Art: Coding in Pascal & C"] ,
+                "dates" : 1982 ,
                 "url" : "https://www.concordia.ca/finearts.html"
             } ,
             {
-                "name": "Concordia University" ,
-                "location": "Montreal" ,
-                "degree": "Bachelor of Fine Arts" ,
-                "dates": 1980 ,
-                "majors": ["Film Aesthetics" , "Film Production" , "Performance Art" ] ,
+                "name" : "Concordia University" ,
+                "location" : "Montreal" ,
+                "degree" : "Bachelor of Fine Arts" ,
+                "dates" : 1980 ,
+                "majors" : ["Film Aesthetics" , "Film Production" , "Performance Art" ] ,
                 "url" : "https://www.concordia.ca/finearts.html"
             } ,
             {
@@ -199,7 +199,7 @@ var education = {
             }
         ] ,
 
-        "on-line classes": [
+        "onlineClasses" : [
             {
                 "title": "Front End Developer nano-degree programme",
                 "school": "Udacity",
@@ -248,7 +248,15 @@ var education = {
                                                             .replace(/,/g ,', '));
                 $('.education-entry:last').append(formattedSchoolMajor);
 
-            } // for loop
+            } // for school loop
+            $('#education').append(HTMLonlineClasses);
+            for (var onlineClass in this.onlineClasses) {
+
+                var formattedOnlineTitle = HTMLonlineTitle.replace('%data%' , this.onlineClasses[onlineClass].title)
+                                                            .replace('#' , this.onlineClasses[onlineClass].url);
+                var formattedOnlineSchool = HTMLonlineSchool.replace('%data%' , this.onlineClasses[onlineClass].school);
+                $('#education > h3').append(formattedOnlineTitle + formattedOnlineSchool);
+            } // for onlineClasses loop
         } //display func
 } // education obj
 /*{

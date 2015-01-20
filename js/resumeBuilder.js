@@ -311,7 +311,7 @@ var projects = {
             "title" : "Orange Udacity Mug" ,
             "dates" : "2014-15" ,
             "description" : "Project to create a static web page in html/css in the exact likeness of a given graphic mock-up." ,
-            "images" : [ "images/mug.png" ]//, "images/page-mock.png" ]
+            "images" : [ "images/mug.png" , "images/page-mock.png" ]
         } ,
 
         {
@@ -358,7 +358,7 @@ projects.display = function() {
         if (projects.projects[project].images.length > 0) {
             for(var image in projects.projects[project].images) {
                 var formattedImage = HTMLprojectImage.replace("%data%" , projects.projects[project].images[image]) ;
-                $('.project-entry').append(formattedImage);
+                $('.project-entry:last').append(formattedImage);
             } // for (image
         } // if (projects
     } // for (project

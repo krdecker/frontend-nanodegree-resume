@@ -29,7 +29,7 @@ var bio = {
         "email" : "krd.345@gmail.com" ,
         "github" : "https://github.com/krdecker" ,
         "twitter" : "@KRD_VANBC" ,
-        "location" : "East End, Saskatchewan"
+        "location" : "Vancouver, BC"
     } ,
     "welcomeMsg" : ". . . inquisitive mind; . . . relentless enthusiasm; . . . poetic nature." ,
     "skills" : [ "  Python" , "  JavaScript" , "  jQuery" , "  HTML/CSS" ] ,
@@ -177,7 +177,7 @@ var education = {
                 "name": "Concordia University" ,
                 "location": "Montreal" ,
                 "degree": "Master of Arts" ,
-                "majors": ["Creative Writing" , "Pascal Programming"] ,
+                "majors": ["Creative Writing" , "Computer Art: Coding in Pascal & C"] ,
                 "dates": 1982 ,
                 "url" : "https://www.concordia.ca/finearts.html"
             } ,
@@ -232,9 +232,47 @@ var education = {
             }
         ] ,
 
-        "display" : "function()"
-} ;
+        display : function() {
+            for (var school in this.schools) {
+                $('#education').append(HTMLschoolStart);
+                var formattedSchoolName = HTMLschoolName.replace('%data%' , this.schools[school].name)
+                                                        .replace('#', this.schools[school].url);
+                var formattedSchoolDegree = HTMLschoolDegree.replace('%data%' , this.schools[school].degree);
+                var formattedSchoolNameDegree = formattedSchoolName + formattedSchoolDegree ;
+                $('.education-entry:last').append(formattedSchoolNameDegree);
+                var formattedSchoolDates = HTMLschoolDates.replace('%data%' , this.schools[school].dates);
+                $('.education-entry:last').append(formattedSchoolDates);
+                var formattedSchoolLocation = HTMLschoolLocation.replace('%data%' , this.schools[school].location);
+                $('.education-entry:last').append(formattedSchoolLocation);
+                var formattedSchoolMajor = HTMLschoolMajor.replace('%data%' , this.schools[school].majors.toString()
+                                                            .replace(/,/g ,', '));
+                $('.education-entry:last').append(formattedSchoolMajor);
 
+            } // for loop
+        } //display func
+} // education obj
+/*{
+                "name": "University of Saskatchewan",
+                "location": "Saskatoon",
+                "dates": 1974,
+                "majors": [ "Chemistry" , "English Literature" ] ,
+                "degree": "Bachelor of Liberal Arts" ,
+                "url" : "http://artsandscience.usask.ca/"
+            }*/
+/*
+var HTMLschoolStart = '<div class="education-entry"></div>';
+var HTMLschoolName = '<a href="#">%data%';
+var HTMLschoolDegree = ' -- %data%</a>';
+var HTMLschoolDates = '<div class="date-text">%data%</div>';
+var HTMLschoolLocation = '<div class="location-text">%data%</div>';
+var HTMLschoolMajor = '<em><br>Major: %data%</em>';
+
+var HTMLonlineClasses = '<h3>Online Classes</h3>';
+var HTMLonlineTitle = '<a href="#">%data%';
+var HTMLonlineSchool = ' - %data%</a>';
+var HTMLonlineDates = '<div class="date-text">%data%</div>';
+var HTMLonlineURL = '<br><a href="#">%data%</a>';
+*/
 
 
 
@@ -323,8 +361,9 @@ projects.display = function() {
 
 
 bio.display();
-displayWork() ;
+displayWork();
 projects.display(); // invoke
+education.display();
 
 //displayProjects();
 

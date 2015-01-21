@@ -27,7 +27,7 @@ var bio = {
     "contacts" : {
         "mobile" : "1-306-500-6434" ,
         "email" : "krd.345@gmail.com" ,
-        "github" : "https://github.com/krdecker" ,
+        "github" : "github.com/krdecker" ,
         "twitter" : "@KRD_VANBC" ,
         "location" : "Vancouver, BC"
     } ,
@@ -207,7 +207,7 @@ var education = {
                 "url": "https://www.udacity.com/nanodegrees"
             } ,
             {
-                "title": "Google Python Workshop",
+                "title": "Google Python 2-Day Intensive",
                 "school": "Google",
                 "date": 2014,
                 "url": "https://developers.google.com/edu/python/"
@@ -258,7 +258,8 @@ var education = {
                 $('#education > h3').append(formattedOnlineTitle + formattedOnlineSchool);
                 var formattedonlineDate = HTMLonlineDates.replace('%data%' , this.onlineClasses[onlineClass].date);
                 $('#education > h3').append(formattedonlineDate);
-                var formattedOnlineURL = HTMLonlineURL.replace('%data%', this.onlineClasses[onlineClass].url);
+                var formattedOnlineURL = HTMLonlineURL.replace('%data%', this.onlineClasses[onlineClass].url)
+                                                        .replace('#', this.onlineClasses[onlineClass].url);
                 $('#education > h3').append(formattedOnlineURL);
             } // for onlineClasses loop
         } //display func
@@ -311,22 +312,34 @@ var projects = {
             "title" : "Orange Udacity Mug" ,
             "dates" : "2014-15" ,
             "description" : "Project to create a static web page in html/css in the exact likeness of a given graphic mock-up." ,
-            "images" : [ "images/mug.png" , "images/page-mock.png" ]
+            "images" : [ "images/mug.png" , "images/page-mock.png" ] ,
+            "url" : "#"
         } ,
 
         {
             "title" : "KRD Portfolio" ,
             "dates" : "2014-15" ,
             "description" : "A portfolio of projects." ,
-            "images" : [ "" ]
+            "images" : [ "", "", "", "" ] ,
+            "url" : "#"
         } ,
 
         {
             "title" : "DADA soulève TOUT" ,
             "dates" : "2012" ,
-            "description" : "A mainly static web-site deployed on Google App Engine." ,
-            "images" : [""]
-            // "url" : "http://international-dada.appspot.com/dadaman/manifesto.html"
+            "description" : "A mainly static web-app deployed on Google App-Engine." ,
+            "images" : [ "images/dada-souleve-tout.png" , "images/cabaret-voltaire.png" ,
+                            "images/man-ray-still-life.png" , ""
+            ] ,
+            "url" : "http://www.international-dada.appspot.com"
+        } ,
+
+        {
+            "title" : "On-Line Resumé" ,
+            "dates" : "2015" ,
+            "description" : "Project to create an on-line resumé." ,
+            "images" : ["",""] ,
+            "url" : "#"
         }
 
     ]
@@ -348,7 +361,8 @@ projects.display = function() {
         //var curProject = projects.projects[project];
         console.log(project);
         $('#projects').append(HTMLprojectStart);
-        var formattedTitle = HTMLprojectTitle.replace("%data%" , projects.projects[project].title) ;
+        var formattedTitle = HTMLprojectTitle.replace("%data%" , projects.projects[project].title)
+                                                .replace("#" , projects.projects[project].url ) ;
         console.log(formattedTitle);
         $('.project-entry:last').append(formattedTitle);
         var formattedDates = HTMLprojectDates.replace("%data%" , projects.projects[project].dates) ;

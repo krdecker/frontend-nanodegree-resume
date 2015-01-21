@@ -71,6 +71,10 @@ h2, h3, h4, h5 {
 
 }
 
+.online-class-ref {
+  font-size: 14px;
+}
+
 p {
   font-size: 14px;
   color: #ddaa33;

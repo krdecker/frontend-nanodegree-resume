@@ -32,7 +32,10 @@ var bio = {
         "location" : "Vancouver, BC"
     } ,
     "welcomeMsg" : ". . . inquisitive mind; . . . relentless enthusiasm; . . . poetic nature." ,
-    "skills" : [ "  Python" , "  JavaScript" , "  jQuery" , "  HTML/CSS" ] ,
+    "skills" : [ "  Python" , "  JavaScript" , "  jQuery" , "  HTML/CSS" ,
+                    "  Google AppEngine Framework" , "  Twitter Bootstrap CSS Framework" ,
+                    "  Google Maps API" , "  GitHub Pages Framework"
+                ] ,
     "bioPic" : "images/krd.png" ,
 
     display : function() {
@@ -41,6 +44,7 @@ var bio = {
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
         var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
         var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+
         var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
         var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
         //var formattedSkills = HTMLskills.replace("%data%", bio.skills);
@@ -51,8 +55,8 @@ var bio = {
         $("#header").prepend(formattedName);
         $("#topContacts").append(formattedEmail);
         $("#topContacts").append(formattedGitHub);
-        $("#topContacts").append(formattedBioPic);
-        $("#topContacts").append(formattedWelcomeMsg);
+        $("#header").append(formattedBioPic);
+        $("#header").append(formattedWelcomeMsg);
 
 
         //$("#skills").append(formattedSkills);
@@ -385,14 +389,14 @@ projects.display = function() {
 //==================================TOP TOP TOP==================================
 //                                  ===========
 
-
+// Display the sections
 bio.display();
-displayWork();
-projects.display(); // invoke
+displayWork(); // TODO: move inside object
+projects.display();
 education.display();
 
-//displayProjects();
 
+// button and map exercises
 
 $('#main').append(internationalizeButton);
 
@@ -405,7 +409,7 @@ function inName(name) {
     return name;
 }
 
-
+// Attach the map element to the DOM for the map functionality in helper.js (could move this there)
 $('#mapDiv').append(googleMap);
 
 /*"Gozer the Traveller - he will come in one of the pre-chosen forms. During the rectification of the Vuldronaii,

@@ -123,6 +123,7 @@ function initializeMap() {
     locationFinder() returns an array of every location string from the JSONs
     written for bio, education, and work.
     */
+    // invoked at top-level of this.
     function locationFinder() {
 
         // initializes an empty array
@@ -151,6 +152,7 @@ function initializeMap() {
     placeData is the object returned from search results containing information
     about a single location.
     */
+    // invoked inside callback()
     function createMapMarker(placeData) {
 
         // The next lines save location data from the search result object to local variables
@@ -191,6 +193,7 @@ function initializeMap() {
     callback(results, status) makes sure the search returned results for a location.
     If so, it creates a new map marker for that location.
     */
+    // invoked in pinPoster()
     function callback(results, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
             createMapMarker(results[0]);
@@ -201,6 +204,7 @@ function initializeMap() {
     pinPoster(locations) takes in the array of locations created by locationFinder()
     and fires off Google place searches for each location
     */
+    // invoked at top-level of this. (see below)
     function pinPoster(locations) {
 
         // creates a Google place search service object. PlacesService does the work of

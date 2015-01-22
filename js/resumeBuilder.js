@@ -33,8 +33,8 @@ var bio = {
     } ,
     "welcomeMsg" : ". . . inquisitive mind; . . . relentless enthusiasm; . . . poetic nature." ,
     "skills" : [ "  Python" , "  JavaScript" , "  jQuery" , "  HTML/CSS" ,
-                    "  Google AppEngine Framework" , "  Twitter Bootstrap CSS Framework" ,
-                    "  Google Maps API" , "  GitHub Pages Framework"
+                    "  Google AppEngine " , "  Twitter Bootstrap " ,
+                    "  Google Maps API" , "  GitHub Pages "
                 ] ,
     "bioPic" : "images/krd.png" ,
 
@@ -42,8 +42,10 @@ var bio = {
 
         var formattedName = HTMLheaderName.replace("%data%", bio.name);
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+
         var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
         var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+        var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 
         var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
         var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
@@ -53,18 +55,22 @@ var bio = {
 
         $("#header").prepend(formattedRole); // LIFO
         $("#header").prepend(formattedName);
+
         $("#topContacts").append(formattedEmail);
         $("#topContacts").append(formattedGitHub);
+        $("#topContacts").append(formattedTwitter);
+
         $("#header").append(formattedBioPic);
         $("#header").append(formattedWelcomeMsg);
 
 
-        //$("#skills").append(formattedSkills);
+
 
         if (bio.skills.length !== 0) {
-           $("#header").append(HTMLskillsStart);
-           // to do: loop thru skills array putting each in its own <li>
-           $("#skills").append( HTMLskills.replace("%data%", bio.skills) ) ;
+            $("#header").append(HTMLskillsStart);
+            for (skill in bio.skills) {
+                $("#skillsH3").append( HTMLskills.replace("%data%", bio.skills[skill]) ) ;
+            }
         } ;
     } // display func
 } ; // bio obj

@@ -56,9 +56,9 @@ var bio = {
         $("#header").prepend(formattedRole); // LIFO
         $("#header").prepend(formattedName);
 
-        $("#topContacts").append(formattedEmail);
-        $("#topContacts").append(formattedGitHub);
-        $("#topContacts").append(formattedTwitter);
+        $("#topContacts, #footerContacts").append(formattedEmail);
+        $("#topContacts, #footerContacts").append(formattedGitHub);
+        $("#topContacts, #footerContacts").append(formattedTwitter);
 
         $("#header").append(formattedBioPic);
         $("#header").append(formattedWelcomeMsg);

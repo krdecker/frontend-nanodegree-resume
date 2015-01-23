@@ -22,19 +22,19 @@
 
 
 var bio = {
-    "name" : "KR Decker" ,
+    "name" : "Ken Decker" ,
     "role" : "Web Developer" ,
     "contacts" : {
         "mobile" : "1-306-500-6434" ,
-        "email" : "krd.345@gmail.com" ,
+        "email" : "h0088.8800h@gmail.com" ,
         "github" : "github.com/krdecker" ,
-        "twitter" : "@KRD_VANBC" ,
+        "twitter" : "@h0088H8800h" ,
         "location" : "Vancouver, BC"
     } ,
     "welcomeMsg" : ". . . inquisitive mind; . . . relentless enthusiasm; . . . poetic nature." ,
     "skills" : [ "  Python" , "  JavaScript" , "  jQuery" , "  HTML/CSS" ,
                     "  Google AppEngine " , "  Twitter Bootstrap " ,
-                    "  Google Maps API" , "  GitHub Pages "
+                    "  Google Maps API" , "  GitHub Pages ", "  C/Unix"
                 ] ,
     "bioPic" : "images/krd.png" ,
 
@@ -95,61 +95,61 @@ var bio = {
 
 var work = {
 
-        "jobs" : [
-            {
-                "employer": "International Alliance of Theatrical & Stage Employees",
-                "title": "Motion Picture Lighting Technician",
-                "location": "Vancouver",
-                "dates":  "1992-2015",
-                "description": "As member of a team, install and operate set lighting for major studio and location shooting. See resume at [link] (http://www.imdb.com/name/nm0213858/) imdb.com",
-                //                "url": "http://www.iatse.com"
-            },
-            {
-                "employer": "Vancouver Film School",
-                "title": "Head Instructor: Film & Video Production",
-                "location": "Vancouver",
-                "dates": "1989-1992" ,
-                "description": "Teach courses and conduct workshops on methods and means of film & video production. Organise programme, including schedule instructors and courses.",
-                //                "url": "http://vfs.edu"
-            },
-            {
-                "employer": "Concordia University, Faculty of Fine Arts",
-                "title": "Assistant Professor",
-                "location": "Montreal",
-                "dates": "1982-1988",
-                "description": "Teach courses on film/video art and writing for same.",
-                //                "url": "https://www.concordia.ca/"
-            },
-            {
-                "employer": "Logo Computer Systems Inc.",
-                "location": "Montreal",
-                "title": "Logo Developer",
-                "dates": "1983-1984",
-                "description": "Develop application in Logo to teach children use of keyboard.",
-                //                "url": "http://www.imdb.com/name/nm0213858/"
-            }
-        ] ,
+    "jobs" : [
+        {
+            "employer": "International Alliance of Theatrical & Stage Employees",
+            "title": "Motion Picture Lighting Technician",
+            "location": "Vancouver",
+            "dates":  "1992-2015",
+            "description": "As member of a team, install and operate set lighting for major studio and location shooting. See resume at [link] (http://www.imdb.com/name/nm0213858/) imdb.com",
+            //                "url": "http://www.iatse.com"
+        },
+        {
+            "employer": "Vancouver Film School",
+            "title": "Head Instructor: Film & Video Production",
+            "location": "Vancouver",
+            "dates": "1989-1992" ,
+            "description": "Teach courses and conduct workshops on methods and means of film & video production. Organise programme, including schedule instructors and courses.",
+            //                "url": "http://vfs.edu"
+        },
+        {
+            "employer": "Concordia University, Faculty of Fine Arts",
+            "title": "Assistant Professor",
+            "location": "Montreal",
+            "dates": "1982-1988",
+            "description": "Teach courses on film/video art and writing for same.",
+            //                "url": "https://www.concordia.ca/"
+        },
+        {
+            "employer": "Logo Computer Systems Inc.",
+            "location": "Montreal",
+            "title": "Logo Developer",
+            "dates": "1983-1984",
+            "description": "Develop application in Logo to teach children use of keyboard.",
+            //                "url": "http://www.imdb.com/name/nm0213858/"
+        }
+    ] ,
 
-        "display" : "function()"
-} ;
-// TODO: make this func a method
-function displayWork() {
-    for (job in work.jobs) {
-        $("#workExperience").append(HTMLworkStart); // installs '.work-entry' div
+    display : function() {
+        for (job in work.jobs) {
+            $("#workExperience").append(HTMLworkStart); // installs '.work-entry' div
 
-        var formattedEmployer = HTMLworkEmployer.replace("%data%" , work.jobs[job].employer) ;
-        var formattedTitle = HTMLworkTitle.replace("%data%" , work.jobs[job].title) ;
-        var concatFormattedEmployerAndTitle = formattedEmployer + formattedTitle ;
-        var formattedDates = HTMLworkDates.replace("%data%" , work.jobs[job].dates) ;
-        var formattedDescription = HTMLworkDescription.replace("%data%" , work.jobs[job].description) ;
+            var formattedEmployer = HTMLworkEmployer.replace("%data%" , work.jobs[job].employer) ;
+            var formattedTitle = HTMLworkTitle.replace("%data%" , work.jobs[job].title) ;
+            var concatFormattedEmployerAndTitle = formattedEmployer + formattedTitle ;
+            var formattedDates = HTMLworkDates.replace("%data%" , work.jobs[job].dates) ;
+            var formattedDescription = HTMLworkDescription.replace("%data%" , work.jobs[job].description) ;
 
-        $(".work-entry:last")
-            .append(concatFormattedEmployerAndTitle)
-            .append(formattedDates)
-            .append(formattedDescription)
-            ;
-    }
-}
+            $(".work-entry:last")
+                .append(concatFormattedEmployerAndTitle)
+                .append(formattedDates)
+                .append(formattedDescription)
+                ;
+        } // for loop block
+    } // display func
+} // work obj
+
+
 
 
 //                   =================
@@ -315,7 +315,12 @@ var projects = {
             "title" : "Orange Udacity Mug" ,
             "dates" : "2014-15" ,
             "description" : "Project to create a static web page in html/css in the exact likeness of a given graphic mock-up." ,
-            "images" : [ "images/mug.png" ,"", "images/page-mock.png" , "" ] ,
+            "images" : [
+                "images/mug.png" ,
+                "",
+                "images/page-mock.png" ,
+                ""
+            ] ,
             "url" : "#"
         } ,
 
@@ -323,7 +328,12 @@ var projects = {
             "title" : "KRD Portfolio" ,
             "dates" : "2014-15" ,
             "description" : "A portfolio of projects." ,
-            "images" : [ "", "", "", "" ] ,
+            "images" : [
+                "",
+                "images/basquiat-boy-dog.jpg",
+                "",
+                "images/Franz-Kafka-The-Metamorphosis.jpg"
+            ] ,
             "url" : "#"
         } ,
 
@@ -331,8 +341,11 @@ var projects = {
             "title" : "DADA soulève TOUT" ,
             "dates" : "2012" ,
             "description" : "A mainly static web-app deployed on Google App-Engine." ,
-            "images" : [ "images/dada-souleve-tout.png" , "","images/cabaret-voltaire.png" ,
-                            "images/man-ray-still-life.png"
+            "images" : [
+                "images/dada-souleve-tout.png" ,
+                "",
+                "images/cabaret-voltaire.png" ,
+                "images/man-ray-still-life.png"
             ] ,
             "url" : "http://www.international-dada.appspot.com"
         } ,
@@ -341,7 +354,12 @@ var projects = {
             "title" : "On-Line Resumé" ,
             "dates" : "2015" ,
             "description" : "Project to create an on-line resumé." ,
-            "images" : ["","","",""] ,
+            "images" : [
+                "images/krd-card.png",
+                "images/SuzanneDuchamp1919Multiplicationbriséeetrétablie.jpg",
+                "",
+                "images/SouscrivezaDADA.jpg"
+            ] ,
             "url" : "#"
         }
 
@@ -362,11 +380,11 @@ projects.display = function() {
     //console.log(projects.projects[1].title);
     for(var project in projects.projects) {
         //var curProject = projects.projects[project];
-        console.log(project);
+        //console.log(project);
         $('#projects').append(HTMLprojectStart);
         var formattedTitle = HTMLprojectTitle.replace("%data%" , projects.projects[project].title)
                                                 .replace("#" , projects.projects[project].url ) ;
-        console.log(formattedTitle);
+        //console.log(formattedTitle);
         $('.project-entry:last').append(formattedTitle);
         var formattedDates = HTMLprojectDates.replace("%data%" , projects.projects[project].dates) ;
         $('.project-entry:last').append(formattedDates);
@@ -390,7 +408,7 @@ projects.display = function() {
 
 // Display the sections
 bio.display();
-displayWork(); // TODO: move inside object ie method
+work.display();
 projects.display();
 education.display();
 

@@ -356,7 +356,7 @@ var projects = {
             "description" : "Project to create an on-line resumé." ,
             "images" : [
                 "images/krd-card.png",
-                "images/SuzanneDuchamp1919Multiplicationbriséeetrétablie.jpg",
+                "images/SD.jpg",
                 "",
                 "images/SouscrivezaDADA.jpg"
             ] ,

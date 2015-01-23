@@ -119,6 +119,7 @@ function initializeMap() {
     map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
 
+
     /*
     locationFinder() returns an array of every location string from the JSONs
     written for bio, education, and work.
@@ -152,7 +153,7 @@ function initializeMap() {
     placeData is the object returned from search results containing information
     about a single location.
     */
-    // invoked inside callback()
+    // invoked by callback()
     function createMapMarker(placeData) {
 
         // The next lines save location data from the search result object to local variables
@@ -171,15 +172,19 @@ function initializeMap() {
         // infoWindows are the little helper windows that open when you click
         // or hover over a pin on a map. They usually contain more information
         // about a location.
-        var infoWindow = new google.maps.InfoWindow({
+        var infowindow = new google.maps.InfoWindow({
             content: name
         });
 
         // hmmmm, I wonder what this is about...
         google.maps.event.addListener(marker, 'click', function() {
             // your code goes here!
+            infowindow.open(map,marker);
         });
-
+        // close window when user moves the flèche
+        google.maps.event.addListener(marker, 'mouseout', function() {
+            infowindow.close(map,marker);
+        });
         // this is where the pin actually gets added to the map.
         // bounds.extend() takes in a map location object
         bounds.extend(new google.maps.LatLng(lat, lon));
@@ -228,12 +233,16 @@ function initializeMap() {
     // Sets the boundaries of the map based on pin locations
     window.mapBounds = new google.maps.LatLngBounds();
 
+    // view from Space!
+    map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+
     // locations is an array of location strings returned from locationFinder()
     locations = locationFinder();
 
     // pinPoster(locations) creates pins on the map for each location in
     // the locations array
     pinPoster(locations);
+
 
 } // initializeMap func
 

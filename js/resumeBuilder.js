@@ -132,7 +132,7 @@ var work = {
 
         "display" : "function()"
 } ;
-
+// TODO: make this func a method
 function displayWork() {
     for (job in work.jobs) {
         $("#workExperience").append(HTMLworkStart); // installs '.work-entry' div
@@ -150,13 +150,6 @@ function displayWork() {
             ;
     }
 }
-
-
-
-// code examples:
-// var formattedName = HTMLheaderName.replace("%data%", bio.name);
-// $("#skills").append( HTMLskills.replace("%data%", bio.skills) ) ;
-
 
 
 //                   =================
@@ -322,7 +315,7 @@ var projects = {
             "title" : "Orange Udacity Mug" ,
             "dates" : "2014-15" ,
             "description" : "Project to create a static web page in html/css in the exact likeness of a given graphic mock-up." ,
-            "images" : [ "images/mug.png" , "images/page-mock.png" ] ,
+            "images" : [ "images/mug.png" ,"", "images/page-mock.png" , "" ] ,
             "url" : "#"
         } ,
 
@@ -338,8 +331,8 @@ var projects = {
             "title" : "DADA soulève TOUT" ,
             "dates" : "2012" ,
             "description" : "A mainly static web-app deployed on Google App-Engine." ,
-            "images" : [ "images/dada-souleve-tout.png" , "images/cabaret-voltaire.png" ,
-                            "images/man-ray-still-life.png" , ""
+            "images" : [ "images/dada-souleve-tout.png" , "","images/cabaret-voltaire.png" ,
+                            "images/man-ray-still-life.png"
             ] ,
             "url" : "http://www.international-dada.appspot.com"
         } ,
@@ -348,7 +341,7 @@ var projects = {
             "title" : "On-Line Resumé" ,
             "dates" : "2015" ,
             "description" : "Project to create an on-line resumé." ,
-            "images" : ["",""] ,
+            "images" : ["","","",""] ,
             "url" : "#"
         }
 
@@ -397,7 +390,7 @@ projects.display = function() {
 
 // Display the sections
 bio.display();
-displayWork(); // TODO: move inside object
+displayWork(); // TODO: move inside object ie method
 projects.display();
 education.display();
 

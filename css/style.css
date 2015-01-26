@@ -9,6 +9,11 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.o-box {
+  border: 2px solid black;
+  margin: 10px 25px 10px 25px;
+}
+
 .clearfix {
   overflow: auto;
 }
@@ -20,7 +25,7 @@
 
 h1 {
   font-size: 40px;
-  color: #F5A623;
+  color: black; /*#F5A623;*/
   line-height: 48px;
   display: inline;
 }
@@ -28,13 +33,13 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999999;
+  color: black;/* #999999;*/
   line-height: 29px;
   padding: 10px;
 }
 
 h3 {
-  font-style: italic;
+  font-weight: bold;
   font-size: 20px;
   color: #000000;
   line-height: 22px;
@@ -43,7 +48,7 @@ h3 {
 h4 {
   font-weight: bold;
   font-size: 14px;
-  color: #4A4A4A;
+  color: black;/*#4A4A4A;*/
   line-height: 17px;
 }
 
@@ -56,32 +61,38 @@ h2, h3, h4, h5 {
 
 .date-text {
   font-style: italic;
+  font-weight: normal;
   font-size: 14px;
-  color: #999999;
+  color: black;/*#999999;*/
   line-height: 16px;
   float: left;
+  margin: 3px 5px;
 }
 
 .location-text {
   font-style: italic;
+  font-weight: normal;
   font-size: 14px;
-  color: #999999;
+  color: black;/*#999999;*/
   line-height: 16px;
-  float: right;
-
+  float: left;
+  margin: 3px 5px;
 }
 
 .online-class-ref {
   font-size: 14px;
+  color: black;
 }
 
 p {
   font-size: 14px;
+  font-weight: normal;
   color: #ddaa33;
   line-height: 21px;
 }
 
 a {
+  font-weight: normal;
   color: #1199C3;
   text-decoration: none;
   margin-top: 10px;
@@ -91,7 +102,7 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #F3F3F3;
+  color: #F3F3F3; /*this will have to -switch- to light black*/
   line-height: 28px;
   text-align: right;
 }
@@ -102,31 +113,31 @@ a {
 }
 
 .orange {
-  background-color: #F5AE23;
+  background-color: white;/*#F5AE23;*/
 }
 
 .orange-text {
-  color: #F5AE23;
+  color: black;/*#F5AE23;*/
 }
 
 .white-text {
   font-weight: bold;
-  color: #FFFFFF;
+  color: black;/*#FFFFFF;*/
 }
 
 .gray {
-  background-color: #554c4c;
+  background-color: white;/*#554c4c;*/
   padding-bottom: 10px;
   clear:both;
 }
 
 .dark-gray {
-  background-color: #4A4A4A;
+  background-color: white;/*#4A4A4A;*/
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: white;/*#484848;*/
 }
 
 .flex-box {
@@ -147,11 +158,13 @@ a {
 
 ul {
   list-style-type: none;
+  margin: 25px;
+  padding: 20px;
 }
 
 .biopic {
   float: left;
-  padding: 10px;
+  padding: 30px;
 /*  width: 160px;
   height: 160px;*/
   width: 230px;
@@ -179,7 +192,7 @@ img {
 
 span {
   padding: 5px;
-  color: bisque;
+  color: black;/*bisque;*/
 }
 
 #letsConnect {

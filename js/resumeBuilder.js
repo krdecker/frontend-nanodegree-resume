@@ -3,31 +3,13 @@
 //===================BIO BIO BIO=================
 //                   ===========
 
-/*
-* `bio` contains:
-
-            name : string
-            role : string
-            contacts : an object with
-                  mobile: string
-                  email: string
-                  github: string
-                  twitter: string
-                  location: string
-            welcomeMessage: string
-            skills: array of strings
-            biopic: url
-            display: function taking no parameters
-*/
-
-
 var bio = {
-    "name" : "Ken Decker" ,
-    "role" : "Web Developer" ,
+    "name" : "/*ken-decker*/" ,
+    "role" : "web-development" ,
     "contacts" : {
         "mobile" : "1-306-500-6434" ,
         "email" : "h0088.8800h@gmail.com" ,
-        "github" : "github.com/krdecker" ,
+        "github" : "github.com/ken-decker" ,
         "twitter" : "@h0088H8800h" ,
         "location" : "Vancouver, BC"
     } ,
@@ -63,35 +45,20 @@ var bio = {
         $("#header").append(formattedBioPic);
         $("#header").append(formattedWelcomeMsg);
 
-
-
-
         if (bio.skills.length !== 0) {
             $("#header").append(HTMLskillsStart);
             for (skill in bio.skills) {
                 $("#skillsH3").append( HTMLskills.replace("%data%", bio.skills[skill]) ) ;
-            }
-        } ;
-    } // display func
-} ; // bio obj
+            } // for skill loop
+        } ; // if bio.skills branch
+    } // display method
+} ; // bio object
+
 
 
 //                     ==============
 // ====================WORK WORK WORK==================
 //                     ==============
-
-/*
-* `work` contains
-
-            jobs: array of objects with
-                 employer: string
-                 title: string
-                 location: string
-                 dates: string (works with a hyphen between them)
-                 description: string
-            display: function taking no parameters
-
-*/
 
 var work = {
 
@@ -146,8 +113,8 @@ var work = {
                 .append(formattedDescription)
                 ;
         } // for loop block
-    } // display func
-} // work obj
+    } // display method
+} // work object
 
 
 
@@ -155,23 +122,6 @@ var work = {
 //                   =================
 // ==================EDUCATION SECTION=================
 //                   =================
-
-/* `education` contains:
-
-            schools: array of objects with
-                 name: string
-                 location: string
-                 degree: string
-                 majors: array of strings
-                 dates: integer (graduation date)
-                 url: string
-            onlineCourses: array with
-                 title: string
-                 school: string
-                 date: integer (date finished)
-                 url: string
-            display: function taking no parameters
-*/
 
 var education = {
 
@@ -265,47 +215,14 @@ var education = {
                                                         .replace('#', this.onlineClasses[onlineClass].url);
                 $('#education > h3').append(formattedOnlineURL);
             } // for onlineClasses loop
-        } //display func
-} // education obj
-/*{
-                "name": "University of Saskatchewan",
-                "location": "Saskatoon",
-                "dates": 1974,
-                "majors": [ "Chemistry" , "English Literature" ] ,
-                "degree": "Bachelor of Liberal Arts" ,
-                "url" : "http://artsandscience.usask.ca/"
-            }*/
-/*
-var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
-var HTMLschoolDegree = ' -- %data%</a>';
-var HTMLschoolDates = '<div class="date-text">%data%</div>';
-var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<em><br>Major: %data%</em>';
-
-var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
-var HTMLonlineSchool = ' - %data%</a>';
-var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
-*/
+        } //display method
+} // education object
 
 
 
 //                               ================
 //===============================PROJECTS SECTION==========================
 //                               ================
-
-/*
-* `projects` contains:
-
-5            projects: array of objects with
-                  title: string
-                  dates: string (works with a hyphen between them)
-                  description: string
-                  images: array with string urls
-            display: function taking no parameters
-*/
 
 var projects = {
 
@@ -367,14 +284,6 @@ var projects = {
 
 }
 
-/*
-var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
-*/
-
 projects.display = function() {
 //function displayProjects() {
     //console.log(projects.projects[1].title);
@@ -414,6 +323,7 @@ education.display();
 
 
 // button and map exercises
+//TODO make this a reverse neg button at upper right corner of page
 
 $('#main').append(internationalizeButton);
 

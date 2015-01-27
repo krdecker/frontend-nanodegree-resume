@@ -9,9 +9,38 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.light {
+  background-color: white;
+  color: black;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.switch {
+  border: 2px solid;
+  border-radius: 2em;
+  /*font: Fraktur;*/
+  padding: 10px;
+  margin: 10px;
+  float: right;
+}
+
 .o-box {
-  border: 2px solid black;
+  border: 2px solid;
   margin: 10px 25px 10px 25px;
+}
+
+#main {
+  padding-bottom: 30px;
+}
+
+.gray {
+  color: #888;
+  padding-bottom: 10px;
+  clear: both;
 }
 
 .clearfix {
@@ -23,9 +52,12 @@
   padding-right: 5%;
 }
 
+hr {
+  height: 2px;
+}
+
 h1 {
   font-size: 40px;
-  color: black; /*#F5A623;*/
   line-height: 48px;
   display: inline;
 }
@@ -33,7 +65,6 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: black;/* #999999;*/
   line-height: 29px;
   padding: 10px;
 }
@@ -41,14 +72,12 @@ h2 {
 h3 {
   font-weight: bold;
   font-size: 20px;
-  color: #000000;
   line-height: 22px;
 }
 
 h4 {
   font-weight: bold;
   font-size: 14px;
-  color: black;/*#4A4A4A;*/
   line-height: 17px;
 }
 
@@ -63,7 +92,6 @@ h2, h3, h4, h5 {
   font-style: italic;
   font-weight: normal;
   font-size: 14px;
-  color: black;/*#999999;*/
   line-height: 16px;
   float: left;
   margin: 3px 5px;
@@ -73,7 +101,6 @@ h2, h3, h4, h5 {
   font-style: italic;
   font-weight: normal;
   font-size: 14px;
-  color: black;/*#999999;*/
   line-height: 16px;
   float: left;
   margin: 3px 5px;
@@ -81,7 +108,6 @@ h2, h3, h4, h5 {
 
 .online-class-ref {
   font-size: 14px;
-  color: black;
 }
 
 p {
@@ -99,7 +125,7 @@ a {
   display: block;
 }
 
-.welcome-message {
+.welcome-message { /* .welcome-message.light */
   font-style: italic;
   font-size: 18px;
   color: #F3F3F3; /*this will have to -switch- to light black*/
@@ -107,37 +133,34 @@ a {
   text-align: right;
 }
 
+.welcome-message.light {
+  color: #F3F3F3;
+}
+
+.welcome-message.dark {
+  color: #282828;
+}
+
 #skillsH3 {
-  color: #F5AE23;
+  color: #f5a623;
   display: none;
 }
 
-.orange {
-  background-color: white;/*#F5AE23;*/
-}
-
+/*
 .orange-text {
-  color: black;/*#F5AE23;*/
+  color: black;
 }
-
+*/
+/*
 .white-text {
   font-weight: bold;
-  color: black;/*#FFFFFF;*/
-}
+  color: black;
+}*/
 
-.gray {
-  background-color: white;/*#554c4c;*/
-  padding-bottom: 10px;
-  clear:both;
-}
-
-.dark-gray {
-  background-color: white;/*#4A4A4A;*/
-}
 
 /* TODO: Replace with image later */
 #header {
-  background-color: white;/*#484848;*/
+  /*background-color: white;*//*#484848;*/
 }
 
 .flex-box {
@@ -192,7 +215,7 @@ img {
 
 span {
   padding: 5px;
-  color: black;/*bisque;*/
+  /*color: black;*//*bisque;*/
 }
 
 #letsConnect {

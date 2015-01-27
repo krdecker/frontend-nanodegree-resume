@@ -4,7 +4,7 @@
 //                   ===========
 
 var bio = {
-    "name" : "/*ken-decker*/" ,
+    "name" : "/ken-decker/" ,
     "role" : "web-development" ,
     "contacts" : {
         "mobile" : "1-306-500-6434" ,
@@ -325,19 +325,21 @@ education.display();
 // button and map exercises
 //TODO make this a reverse neg button at upper right corner of page
 
-$('#main').append(internationalizeButton);
 
-function inName(name) {
-    //var name = nameString;
-    var spIndex = name.trim().indexOf(' ');
+$(document).ready(function() {
+    $('button').click(function() {
+    /*$('button').on( "click", function() {*/
+        console.log('Ouch!');
+        $('#main').toggleClass( "light dark" );
+        $('.welcome-message').toggleClass( "light dark" );
+    });
+});
 
-    name = name[0].toUpperCase() + name.slice(1, spIndex ) + ' ' + name.slice(spIndex+1).toUpperCase();
+    $('#main').prepend(blackWhiteToggle);
 
-    return name;
-}
 
-// Attach the map element to the DOM for the map functionality in helper.js (could move this there)
-$('#mapDiv').append(googleMap);
+    // Attach the map element to the DOM for the map functionality in helper.js (could move this there)
+    $('#mapDiv').append(googleMap);
 
 /*"Gozer the Traveller - he will come in one of the pre-chosen forms. During the rectification of the Vuldronaii,
 the Traveller came as a large and moving Torb! Then, during the third reconciliation of the last of the Meketrex

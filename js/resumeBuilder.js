@@ -34,7 +34,7 @@ var bio = {
         //var formattedSkills = HTMLskills.replace("%data%", bio.skills);
 
 
-
+        $('#header').prepend(blackWhiteToggle);
         $("#header").prepend(formattedRole); // LIFO
         $("#header").prepend(formattedName);
 
@@ -52,13 +52,13 @@ var bio = {
             } // for skill loop
         } ; // if bio.skills branch
     } // display method
-} ; // bio object
+}; // bio object
 
 
 
-//                     ==============
-// ====================WORK WORK WORK==================
-//                     ==============
+//                               ==============
+// ==============================WORK WORK WORK==================
+//                               ==============
 
 var work = {
 
@@ -114,14 +114,14 @@ var work = {
                 ;
         } // for loop block
     } // display method
-} // work object
+}; // work object
 
 
 
 
-//                   =================
-// ==================EDUCATION SECTION=================
-//                   =================
+//                              =================
+// =============================EDUCATION SECTION=================
+//                              =================
 
 var education = {
 
@@ -216,7 +216,7 @@ var education = {
                 $('#education > h3').append(formattedOnlineURL);
             } // for onlineClasses loop
         } //display method
-} // education object
+}; // education object
 
 
 
@@ -280,34 +280,30 @@ var projects = {
             "url" : "#"
         }
 
-    ]
-
-}
-
-projects.display = function() {
-//function displayProjects() {
-    //console.log(projects.projects[1].title);
-    for(var project in projects.projects) {
-        //var curProject = projects.projects[project];
-        //console.log(project);
-        $('#projects').append(HTMLprojectStart);
-        var formattedTitle = HTMLprojectTitle.replace("%data%" , projects.projects[project].title)
-                                                .replace("#" , projects.projects[project].url ) ;
-        //console.log(formattedTitle);
-        $('.project-entry:last').append(formattedTitle);
-        var formattedDates = HTMLprojectDates.replace("%data%" , projects.projects[project].dates) ;
-        $('.project-entry:last').append(formattedDates);
-        var formattedDescription = HTMLprojectDescription.replace("%data%" , projects.projects[project].description) ;
-        $('.project-entry:last').append(formattedDescription);
-        if (projects.projects[project].images.length > 0) {
-            for(var image in projects.projects[project].images) {
-                var formattedImage = HTMLprojectImage.replace("%data%" , projects.projects[project].images[image]) ;
-                $('.project-entry:last').append(formattedImage);
-            } // for (image
-        } // if (projects
-    } // for (project
-} // .display func
-
+    ],
+    display : function() {
+        //console.log(projects.projects[1].title);
+        for(var project in projects.projects) {
+            //var curProject = projects.projects[project];
+            //console.log(project);
+            $('#projects').append(HTMLprojectStart);
+            var formattedTitle = HTMLprojectTitle.replace("%data%" , projects.projects[project].title)
+                                                    .replace("#" , projects.projects[project].url ) ;
+            //console.log(formattedTitle);
+            $('.project-entry:last').append(formattedTitle);
+            var formattedDates = HTMLprojectDates.replace("%data%" , projects.projects[project].dates) ;
+            $('.project-entry:last').append(formattedDates);
+            var formattedDescription = HTMLprojectDescription.replace("%data%" , projects.projects[project].description) ;
+            $('.project-entry:last').append(formattedDescription);
+            if (projects.projects[project].images.length > 0) {
+                for(var image in projects.projects[project].images) {
+                    var formattedImage = HTMLprojectImage.replace("%data%" , projects.projects[project].images[image]) ;
+                    $('.project-entry:last').append(formattedImage);
+                } // for (image loop
+            } // if (projects branch
+        } // for (project loop
+    } // .display method
+}; // projects object
 
 
 
@@ -335,15 +331,19 @@ $(document).ready(function() {
     });
 });
 
-    $('#main').prepend(blackWhiteToggle);
+
 
 
     // Attach the map element to the DOM for the map functionality in helper.js (could move this there)
     $('#mapDiv').append(googleMap);
 
-/*"Gozer the Traveller - he will come in one of the pre-chosen forms. During the rectification of the Vuldronaii,
-the Traveller came as a large and moving Torb! Then, during the third reconciliation of the last of the Meketrex
-supplicants, they chose a new form for him - that of a giant Sloar!
-Many Shubs and Zuuls knew what it was to be roasted in the depths of a Sloar that day, I can tell you!"*/
+/*
+    "Gozer the Traveller - he will come in one of the pre-chosen forms.
+    During the rectification of the Vuldronaii, the Traveller came as a
+    large and moving Torb! Then, during the third reconciliation of the
+    last of the Meketrex supplicants, they chose a new form for him -
+    that of a giant Sloar!  Many Shubs and Zuuls knew what it was to be
+    roasted in the depths of a Sloar that day, I can tell you!"
+*/
 
 

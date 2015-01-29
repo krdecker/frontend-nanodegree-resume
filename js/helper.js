@@ -34,7 +34,7 @@ var HTMLschoolName = '<a href="#">%data%';
 var HTMLschoolDegree = ' -- %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<em><br>Major: %data%</em>';
+var HTMLschoolMajor = '<em><br>Majors: %data%</em>';
 
 var HTMLonlineClasses = '<br><h3>Online Classes</h3>';
 var HTMLonlineTitle = '<a href="#">%data%';
@@ -56,23 +56,23 @@ var googleMap = '<div id="map"></div>';
 /*
 The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
 */
-clickLocations = [];
 
-function logClicks(x,y) {
-  clickLocations.push(
-    {
-      x: x,
-      y: y
-    }
-  );
-  console.log('x location: ' + x + '; y location: ' + y);
-}
+// clickLocations = [];
 
-$(document).click(function(loc) {
-  // your code goes here!
-  logClicks(loc.pageX , loc.pageY);
-});
+// function logClicks(x,y) {
+//   clickLocations.push(
+//     {
+//       x: x,
+//       y: y
+//     }
+//   );
+//   console.log('x location: ' + x + '; y location: ' + y);
+// }
 
+// $(document).click(function(loc) {
+//   // your code goes here!
+//   logClicks(loc.pageX , loc.pageY);
+// });
 
 
 /*

@@ -260,7 +260,7 @@ var projects = {
             "description" : "A mainly static web-app deployed on Google App-Engine." ,
             "images" : [
                 "images/dada-souleve-tout.png" ,
-                "",
+                "images/Merz299_Schwitters.png",
                 "images/cabaret-voltaire.png" ,
                 "images/man-ray-still-life.png"
             ] ,
@@ -302,7 +302,11 @@ var projects = {
                 } // for (image loop
             } // if (projects branch
         } // for (project loop
-    } // .display method
+    } , // .display method
+    undisplay : function() {
+        console.log('in projects.undisplay()');
+
+    }
 }; // projects object
 
 
@@ -313,10 +317,11 @@ var projects = {
 
 // Display the sections
 bio.display();
+/*
 work.display();
 projects.display();
 education.display();
-
+*/
 
 // button and map exercises
 //TODO make this a reverse neg button at upper right corner of page
@@ -331,11 +336,35 @@ $(document).ready(function() {
     });
 });
 
+$('#projects').click(function() {
+    if ($('#projects').hasClass("un-opened")) {
+        projects.display();
+        $('#projects')
+            .removeClass("un-opened")
+            .toggleClass("open closed");
+    } else {
+        //console.log('in else');
+        $('#projects div').slideToggle();
+        if ($('#projects').hasClass("open")) {
+            setTimeout(func, 1000); // time for sliding
+            function func() {
+                $('#projects').toggleClass("open closed");
+            }
+        } else {
+            $('#projects').toggleClass("open closed");
+        }
+    };
 
+});
 
+$('#workExperience').click( function() {
+    console.log("workEx clicked!");
+    console.log( $(this) );
+    $( this ).addClass("clicked");
+});
 
     // Attach the map element to the DOM for the map functionality in helper.js (could move this there)
-    $('#mapDiv').append(googleMap);
+$('#mapDiv').append(googleMap);
 
 /*
     "Gozer the Traveller - he will come in one of the pre-chosen forms.

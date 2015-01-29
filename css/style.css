@@ -34,6 +34,14 @@
   margin: 10px 25px 10px 25px;
   padding: 10px;
 }
+/*
+.un-opened:hover {
+  background-color: #f5a623;
+}
+*/
+.closed:hover {
+  background-color: #f5a623;
+}
 
 #main {
   padding-bottom: 30px;
@@ -143,6 +151,10 @@ a {
   color: #282828;
 }
 
+.welcome-message:hover {
+  color: #f5a623;
+}
+
 #skillsH3 {
   color: #f5a623;
   display: none;
@@ -246,12 +258,12 @@ span {
   #letsConnect {
     margin-top: 10%;
   }
-  /*.biopic {
-    width: 160px;
-    height: 160px;
-  }*/
+  .biopic,
   .welcome-message {
     display: none;
+  }
+  .un-opened {
+    background-color: #f5a623;
   }
 }
 

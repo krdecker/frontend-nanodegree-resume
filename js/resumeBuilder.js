@@ -302,11 +302,7 @@ var projects = {
                 } // for (image loop
             } // if (projects branch
         } // for (project loop
-    } , // .display method
-    undisplay : function() {
-        console.log('in projects.undisplay()');
-
-    }
+    } // .display method
 }; // projects object
 
 
@@ -315,56 +311,105 @@ var projects = {
 //==================================TOP TOP TOP==================================
 //                                  ===========
 
-// Display the sections
-bio.display();
+var folders = {
+    "projects" : projects,
+    "workExperience" : work ,
+    "education" : education
+}
+
+function openFolder(jQobj) {
+    console.log("in openFolder");
+    var _id = jQobj.id;
+    console.log(_id);
+    for ( folder in folders) {
+        console.log(folder);
+        console.log(folders[folder]);
+        if (folder == _id) {
+            console.log(folders[folder]);
+            //var fobj = folders[folder]);
+            folders[folder].display();
+        }
+    }
+}
 /*
 work.display();
 projects.display();
 education.display();
 */
 
-// button and map exercises
-//TODO make this a reverse neg button at upper right corner of page
-
+// Event Handlers
 
 $(document).ready(function() {
+
+    // Display the header & biography section
+    bio.display();
+
     $('button').click(function() {
     /*$('button').on( "click", function() {*/
         console.log('Ouch!');
         $('#main').toggleClass( "light dark" );
         $('.welcome-message').toggleClass( "light dark" );
     });
-});
 
-$('#projects').click(function() {
-    if ($('#projects').hasClass("un-opened")) {
-        projects.display();
-        $('#projects')
-            .removeClass("un-opened")
-            .toggleClass("open closed");
-    } else {
-        //console.log('in else');
-        $('#projects div').slideToggle();
-        if ($('#projects').hasClass("open")) {
-            setTimeout(func, 1000); // time for sliding
-            function func() {
+
+    $('#projects').click(function() {
+        if ($('#projects').hasClass("un-opened")) {
+            projects.display();
+            $('#projects')
+                .removeClass("un-opened")
+                .toggleClass("open closed");
+        } else {
+            //console.log('in else');
+            $('#projects div').slideToggle();
+            if ($('#projects').hasClass("open")) {
+                setTimeout(func, 1000); // time for sliding
+                function func() {
+                    $('#projects').toggleClass("open closed");
+                }
+            } else {
                 $('#projects').toggleClass("open closed");
             }
-        } else {
-            $('#projects').toggleClass("open closed");
-        }
-    };
+        };
 
-});
+    });
 
-$('#workExperience').click( function() {
-    console.log("workEx clicked!");
-    console.log( $(this) );
-    $( this ).addClass("clicked");
-});
+    $('#workExperience').click( function() {
+        console.log("workEx clicked!");
+        console.log( $(this) );
+        console.log("and . . . ");
+        console.log( this );
+        console.log("then . . . ");
+        console.log( this.id );
+        $( this ).addClass("clicked");
+        openFolder(this);
+    });
+
+// $('.folder').click(function() {
+//     //var thing = $(this);
+//     if $(this).hasClass("un-opened")) {
+//         //this.display();
+//         //console.log($(this).id);
+//         $(this)
+//             .removeClass("un-opened")
+//             .toggleClass("open closed");
+//     } else {
+//         //console.log('in else');
+//         $(this > 'div').slideToggle();
+//         if ($( this ).hasClass("open")) {
+//             setTimeout(func, 1000); // time for sliding
+//             function func() {
+//                 $( this ).toggleClass("open closed");
+//             }
+//         } else {
+//             $( this ).toggleClass("open closed");
+//         }
+//     };
+
+// });
+
 
     // Attach the map element to the DOM for the map functionality in helper.js (could move this there)
-$('#mapDiv').append(googleMap);
+    $('#mapDiv').append(googleMap);
 
 /*
     "Gozer the Traveller - he will come in one of the pre-chosen forms.
@@ -376,3 +421,4 @@ $('#mapDiv').append(googleMap);
 */
 
 
+}); // document ready func

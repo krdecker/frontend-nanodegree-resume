@@ -31,11 +31,9 @@ var bio = {
 
         var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
         var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
-        //var formattedSkills = HTMLskills.replace("%data%", bio.skills);
 
-
-        $('#header').prepend(HTMLblackWhiteToggle);
-        $("#header").prepend(formattedRole); // LIFO
+        $('#header').append(HTMLblackWhiteToggle);
+        $("#header").prepend(formattedRole);
         $("#header").prepend(formattedName);
 
         $("#topContacts, #footerContacts").append(formattedEmail);

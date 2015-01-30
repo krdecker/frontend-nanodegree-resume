@@ -23,9 +23,10 @@
   border: 2px solid;
   border-radius: 2em;
   /*font: Fraktur;*/
-  padding: 10px;
+  padding: 20px 10px 20px 10px;
   margin: 10px;
   float: right;
+  font-size: 16px;
 }
 
 .o-box {
@@ -129,6 +130,10 @@ p {
   color: #ddaa33;
   line-height: 21px;
   display: block;
+}
+
+.job-title {
+  font-size: 18px;
 }
 
 a {
@@ -239,6 +244,10 @@ img {
 span {
   padding: 5px;
   /*color: black;*//*bisque;*/
+}
+
+.majors {
+  font-size: 14px;
 }
 
 #letsConnect {

@@ -34,7 +34,7 @@ var bio = {
         //var formattedSkills = HTMLskills.replace("%data%", bio.skills);
 
 
-        $('#header').prepend(blackWhiteToggle);
+        $('#header').prepend(HTMLblackWhiteToggle);
         $("#header").prepend(formattedRole); // LIFO
         $("#header").prepend(formattedName);
 
@@ -208,12 +208,12 @@ var education = {
                 var formattedOnlineTitle = HTMLonlineTitle.replace('%data%' , this.onlineClasses[onlineClass].title)
                                                             .replace('#' , this.onlineClasses[onlineClass].url);
                 var formattedOnlineSchool = HTMLonlineSchool.replace('%data%' , this.onlineClasses[onlineClass].school);
-                $('#education > h3').append(formattedOnlineTitle + formattedOnlineSchool);
+                $('.on-line').append(formattedOnlineTitle + formattedOnlineSchool);
                 var formattedonlineDate = HTMLonlineDates.replace('%data%' , this.onlineClasses[onlineClass].date);
-                $('#education > h3').append(formattedonlineDate);
+                $('.on-line').append(formattedonlineDate);
                 var formattedOnlineURL = HTMLonlineURL.replace('%data%', this.onlineClasses[onlineClass].url)
                                                         .replace('#', this.onlineClasses[onlineClass].url);
-                $('#education > h3').append(formattedOnlineURL);
+                $('.on-line').append(formattedOnlineURL);
             } // for onlineClasses loop
         } //display method
 }; // education object
@@ -318,15 +318,14 @@ var folders = {
 }
 
 function openFolder(jQobj) {
-    console.log("in openFolder");
+//    console.log("in openFolder");
     var _id = jQobj.id;
-    console.log(_id);
+//    console.log(_id);
     for ( folder in folders) {
-        console.log(folder);
-        console.log(folders[folder]);
+//        console.log(folder);
+//        console.log(folders[folder]);
         if (folder == _id) {
-            console.log(folders[folder]);
-            //var fobj = folders[folder]);
+//            console.log(folders[folder]);
             folders[folder].display();
         }
     }
@@ -343,6 +342,8 @@ $(document).ready(function() {
 
     // Display the header & biography section
     bio.display();
+    // Attach the map element to the DOM for the map functionality in helper.js (could move this there)
+    $('#mapDiv').append(HTMLgoogleMap);
 
     $('button').click(function() {
     /*$('button').on( "click", function() {*/
@@ -352,64 +353,65 @@ $(document).ready(function() {
     });
 
 
-    $('#projects').click(function() {
-        if ($('#projects').hasClass("un-opened")) {
-            projects.display();
-            $('#projects')
+    // $('#projects').click(function() {
+    //     if ($('#projects').hasClass("un-opened")) {
+    //         projects.display();
+    //         $('#projects')
+    //             .removeClass("un-opened")
+    //             .toggleClass("open closed");
+    //     } else {
+    //         //console.log('in else');
+    //         $('#projects div').slideToggle();
+    //         if ($('#projects').hasClass("open")) {
+    //             setTimeout(func, 1000); // time for sliding
+    //             function func() {
+    //                 $('#projects').toggleClass("open closed");
+    //             }
+    //         } else {
+    //             $('#projects').toggleClass("open closed");
+    //         }
+    //     };
+
+    // });
+
+    // $('#workExperience').click( function() {
+    //     console.log("workEx clicked!");
+    //     console.log( $(this) );
+    //     console.log("and . . . ");
+    //     console.log( this );
+    //     console.log("then . . . ");
+    //     console.log( this.id );
+    //     $( this ).addClass("clicked");
+    //     openFolder(this);
+    // });
+
+    $('.folder').click(function() {
+        var $this = $(this);
+        if ( $this.hasClass("un-opened") ) {
+            console.log(this.id);
+            openFolder(this);
+            $this
                 .removeClass("un-opened")
                 .toggleClass("open closed");
         } else {
-            //console.log('in else');
-            $('#projects div').slideToggle();
-            if ($('#projects').hasClass("open")) {
-                setTimeout(func, 1000); // time for sliding
+            console.log('in first else');
+            $this.find('div').slideToggle();
+            if ( $this.hasClass("open") ) {
+                console.log('in if open');
+                // give time for sliding before switching to 'closed'
+                setTimeout(func, 1000);
                 function func() {
-                    $('#projects').toggleClass("open closed");
+                    $this.toggleClass("open closed");
                 }
             } else {
-                $('#projects').toggleClass("open closed");
-            }
+                console.log('in else');
+                $this.toggleClass("open closed");
+            };
         };
-
     });
 
-    $('#workExperience').click( function() {
-        console.log("workEx clicked!");
-        console.log( $(this) );
-        console.log("and . . . ");
-        console.log( this );
-        console.log("then . . . ");
-        console.log( this.id );
-        $( this ).addClass("clicked");
-        openFolder(this);
-    });
-
-// $('.folder').click(function() {
-//     //var thing = $(this);
-//     if $(this).hasClass("un-opened")) {
-//         //this.display();
-//         //console.log($(this).id);
-//         $(this)
-//             .removeClass("un-opened")
-//             .toggleClass("open closed");
-//     } else {
-//         //console.log('in else');
-//         $(this > 'div').slideToggle();
-//         if ($( this ).hasClass("open")) {
-//             setTimeout(func, 1000); // time for sliding
-//             function func() {
-//                 $( this ).toggleClass("open closed");
-//             }
-//         } else {
-//             $( this ).toggleClass("open closed");
-//         }
-//     };
-
-// });
 
 
-    // Attach the map element to the DOM for the map functionality in helper.js (could move this there)
-    $('#mapDiv').append(googleMap);
 
 /*
     "Gozer the Traveller - he will come in one of the pre-chosen forms.
@@ -422,3 +424,4 @@ $(document).ready(function() {
 
 
 }); // document ready func
+

@@ -57,7 +57,10 @@
   overflow: auto;
 }
 
-.education-entry, .work-entry, .project-entry {
+.education-entry,
+.work-entry,
+.project-entry,
+.on-line {
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -125,6 +128,7 @@ p {
   font-weight: normal;
   color: #ddaa33;
   line-height: 21px;
+  display: block;
 }
 
 a {
@@ -132,7 +136,7 @@ a {
   color: #1199C3;
   text-decoration: none;
   margin-top: 10px;
-  display: block;
+  display: inline;
 }
 
 .welcome-message { /* .welcome-message.light */
@@ -267,7 +271,7 @@ span {
   }
 }
 
-#map {
+#map-box {
   display: block;
   height: 100%;
   margin-left: 5%;

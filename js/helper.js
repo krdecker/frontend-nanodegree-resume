@@ -36,14 +36,14 @@ var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<em><br>Majors: %data%</em>';
 
-var HTMLonlineClasses = '<br><h3>Online Classes</h3>';
+var HTMLonlineClasses = '<div class="on-line"><br><h3>Online Classes</h3></div>';
 var HTMLonlineTitle = '<a href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<a class="online-class-ref" href="#">%data%</a>';
 
-var blackWhiteToggle = '<button class="switch">Black/White Switch</button>';
-var googleMap = '<div id="map"></div>';
+var HTMLblackWhiteToggle = '<button class="switch">Black/White Switch</button>';
+var HTMLgoogleMap = '<div id="map-box"></div>';
 
 
 
@@ -95,8 +95,8 @@ function initializeMap() {
     };
 
     // This next line makes `map` a new Google Map JavaScript Object and attaches it to
-    // <div id="map">, which is appended as part of an exercise late in the course.
-    map = new google.maps.Map(document.querySelector('#map'), mapOptions);
+    // <div id="map-box">, which is appended as part of an exercise late in the course.
+    map = new google.maps.Map(document.querySelector('#map-box'), mapOptions);
 
 
 

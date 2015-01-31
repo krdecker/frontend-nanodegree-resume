@@ -66,8 +66,8 @@ var work = {
             "title": "Motion Picture Lighting Technician",
             "location": "Vancouver",
             "dates":  "1992-2015",
-            "description": "As member of a team, install and operate set lighting for major studio and location shooting. See resume at [link] (http://www.imdb.com/name/nm0213858/) imdb.com",
-            //                "url": "http://www.iatse.com"
+            "description": 'As member of a team, install and operate set lighting for major studio and location shooting.<br>See resume at<a href="http://www.imdb.com/name/nm0213858/"> imdb.com</a>',
+            "url": "http://www.iatse.com"
         },
         {
             "employer": "Vancouver Film School",
@@ -75,7 +75,7 @@ var work = {
             "location": "Vancouver",
             "dates": "1989-1992" ,
             "description": "Teach courses and conduct workshops on methods and means of film & video production. Organise programme, including schedule instructors and courses.",
-            //                "url": "http://vfs.edu"
+            "url": "http://vfs.edu"
         },
         {
             "employer": "Concordia University, Faculty of Fine Arts",
@@ -83,7 +83,7 @@ var work = {
             "location": "Montreal",
             "dates": "1982-1988",
             "description": "Teach courses on film/video art and writing for same.",
-            //                "url": "https://www.concordia.ca/"
+            "url": "https://www.concordia.ca/"
         },
         {
             "employer": "Logo Computer Systems Inc.",
@@ -91,7 +91,7 @@ var work = {
             "title": "Logo Developer",
             "dates": "1983-1984",
             "description": "Develop application in Logo to teach children use of keyboard.",
-            //                "url": "http://www.imdb.com/name/nm0213858/"
+            "url": "http://www.imdb.com/name/nm0213858/"
         }
     ] ,
 
@@ -99,7 +99,8 @@ var work = {
         for (job in work.jobs) {
             $("#workExperience").append(HTMLworkStart); // installs '.work-entry' div
 
-            var formattedEmployer = HTMLworkEmployer.replace("%data%" , work.jobs[job].employer) ;
+            var formattedEmployer = HTMLworkEmployer.replace("%data%" , work.jobs[job].employer)
+                                                    .replace("#", work.jobs[job].url) ;
             var formattedTitle = HTMLworkTitle.replace("%data%" , work.jobs[job].title) ;
             var concatFormattedEmployerAndTitle = formattedEmployer + formattedTitle ;
             var formattedDates = HTMLworkDates.replace("%data%" , work.jobs[job].dates) ;
@@ -309,6 +310,9 @@ var projects = {
 //==================================TOP TOP TOP==================================
 //                                  ===========
 
+
+// Tools for folding
+
 var folders = {
     "projects" : projects,
     "workExperience" : work ,
@@ -316,93 +320,54 @@ var folders = {
 }
 
 function openFolder(jQobj) {
-//    console.log("in openFolder");
     var _id = jQobj.id;
-//    console.log(_id);
     for ( folder in folders) {
-//        console.log(folder);
-//        console.log(folders[folder]);
         if (folder == _id) {
-//            console.log(folders[folder]);
             folders[folder].display();
         }
     }
 }
-/*
-work.display();
-projects.display();
-education.display();
-*/
 
-// Event Handlers
+
+
+
 
 $(document).ready(function() {
+
+// Set-Up
 
     // Display the header & biography section
     bio.display();
     // Attach the map element to the DOM for the map functionality in helper.js (could move this there)
     $('#mapDiv').append(HTMLgoogleMap);
 
+// Event Handlers
+
+    // Black <-> White switch event-handler
     $('button').click(function() {
-    /*$('button').on( "click", function() {*/
-        console.log('Ouch!');
         $('#main').toggleClass( "light dark" );
         $('.welcome-message').toggleClass( "light dark" );
     });
 
-
-    // $('#projects').click(function() {
-    //     if ($('#projects').hasClass("un-opened")) {
-    //         projects.display();
-    //         $('#projects')
-    //             .removeClass("un-opened")
-    //             .toggleClass("open closed");
-    //     } else {
-    //         //console.log('in else');
-    //         $('#projects div').slideToggle();
-    //         if ($('#projects').hasClass("open")) {
-    //             setTimeout(func, 1000); // time for sliding
-    //             function func() {
-    //                 $('#projects').toggleClass("open closed");
-    //             }
-    //         } else {
-    //             $('#projects').toggleClass("open closed");
-    //         }
-    //     };
-
-    // });
-
-    // $('#workExperience').click( function() {
-    //     console.log("workEx clicked!");
-    //     console.log( $(this) );
-    //     console.log("and . . . ");
-    //     console.log( this );
-    //     console.log("then . . . ");
-    //     console.log( this.id );
-    //     $( this ).addClass("clicked");
-    //     openFolder(this);
-    // });
-
+    // event-handler to open & close the folder sections:
+    // Work Experience, Projects, Education
+    // class .un-opened signals call to display() method on the object
+    // toggled class .open/.closed controls css rule for high-lighting on :hover
     $('.folder').click(function() {
         var $this = $(this);
         if ( $this.hasClass("un-opened") ) {
-            console.log(this.id);
             openFolder(this);
-            $this
-                .removeClass("un-opened")
-                .toggleClass("open closed");
+            $this.removeClass("un-opened")
+                 .toggleClass("open closed");
         } else {
-            console.log('in first else');
             $this.find('div').slideToggle();
             if ( $this.hasClass("open") ) {
-                console.log('in if open');
                 // give time for sliding before switching to 'closed'
                 setTimeout(func, 1000);
                 function func() {
                     $this.toggleClass("open closed");
                 }
             } else {
-                console.log('in else');
                 $this.toggleClass("open closed");
             };
         };

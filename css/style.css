@@ -102,28 +102,6 @@ h2, h3, h4, h5 {
 }
 
 
-.date-text {
-  font-style: italic;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
-  float: left;
-  margin: 3px 5px;
-}
-
-.location-text {
-  font-style: italic;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
-  float: left;
-  margin: 3px 5px;
-}
-
-.online-class-ref {
-  font-size: 14px;
-}
-
 p {
   font-size: 14px;
   font-weight: normal;
@@ -134,6 +112,7 @@ p {
 
 .job-title {
   font-size: 18px;
+  padding-top: 8px;
 }
 
 a {
@@ -168,6 +147,40 @@ a {
   color: #f5a623;
   display: none;
 }
+
+
+.date-text {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  float: left;
+  margin: 3px 5px;
+}
+
+.location-text {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  float: left;
+  margin: 3px 5px;
+}
+
+.on-line {
+  padding-bottom: 8px;
+}
+
+.school-degree,
+.on-line-title-school {
+  padding-top: 8px;
+}
+
+.online-class-ref {
+  font-size: 14px;
+  display: block;
+}
+
 
 /*
 .orange-text {
@@ -275,7 +288,7 @@ span {
   .welcome-message {
     display: none;
   }
-  .un-opened {
+  .closed {
     background-color: #f5a623;
   }
 }

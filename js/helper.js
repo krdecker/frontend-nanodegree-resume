@@ -40,7 +40,7 @@ var HTMLonlineClasses = '<div class="on-line"><br><h3>Online Classes</h3></div>'
 var HTMLonlineTitle = '<div class="on-line-title-school"><a href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<div class="online-class-ref"><a href="#">%data%</a></div>';
+var HTMLonlineURL = '<div class="online-class-ref"><br><a href="#">%data%</a></div>';
 
 var HTMLblackWhiteToggle = '<button class="switch"> Black <-> White </button>';
 var HTMLgoogleMap = '<div id="map-box"></div>';

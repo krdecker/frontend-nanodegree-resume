@@ -74,7 +74,7 @@ var work = {
             "title": "Head Instructor: Film & Video Production",
             "location": "Vancouver",
             "dates": "1989-1992" ,
-            "description": "Teach courses and conduct workshops on methods and means of film & video production. Organise programme, including schedule instructors and courses.",
+            "description": "Teach courses and conduct workshops on methods and means of film & video production.<br>Organise programme, including schedule instructors and courses.",
             "url": "http://vfs.edu"
         },
         {

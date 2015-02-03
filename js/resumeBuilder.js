@@ -209,10 +209,10 @@ var education = {
                 var formattedOnlineSchool = HTMLonlineSchool.replace('%data%' , this.onlineClasses[onlineClass].school);
                 $('.on-line').append(formattedOnlineTitle + formattedOnlineSchool);
                 var formattedonlineDate = HTMLonlineDates.replace('%data%' , this.onlineClasses[onlineClass].date);
-                $('.on-line').append(formattedonlineDate);
+                $('.on-line-title-school:last').append(formattedonlineDate);
                 var formattedOnlineURL = HTMLonlineURL.replace('%data%', this.onlineClasses[onlineClass].url)
                                                         .replace('#', 'http://' + this.onlineClasses[onlineClass].url);
-                $('.on-line').append(formattedOnlineURL);
+                $('.on-line-title-school:last').append(formattedOnlineURL);
             } // for onlineClasses loop
         } //display method
 }; // education object

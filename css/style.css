@@ -177,8 +177,8 @@ a {
 }
 
 .online-class-ref {
-  font-size: 14px;
-  display: block;
+  font-size: 12px;
+  display: in-line;
 }
 
 

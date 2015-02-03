@@ -237,7 +237,7 @@ var projects = {
                 "images/page-mock.png" ,
                 ""
             ] ,
-            "url" : "#"
+            "url" : "http://krdecker.github.io/udacity-mug/"
         } ,
 
         {
@@ -250,7 +250,7 @@ var projects = {
                 "",
                 "images/Franz-Kafka-The-Metamorphosis.jpg"
             ] ,
-            "url" : "#"
+            "url" : "http://krdecker.github.io/krd_portfolio/"
         } ,
 
         {
@@ -276,7 +276,7 @@ var projects = {
                 "",
                 "images/SouscrivezaDADA.jpg"
             ] ,
-            "url" : "#"
+            "url" : "http://krdecker.github.io/frontend-nanodegree-resume"
         }
 
     ],

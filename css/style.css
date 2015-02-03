@@ -291,6 +291,9 @@ span {
   .closed {
     background-color: #f5a623;
   }
+  #mapDiv {
+    display: none;
+  }
 }
 
 #map-box {

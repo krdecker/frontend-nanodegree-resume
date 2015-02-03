@@ -160,11 +160,10 @@ a {
 
 .online-class-ref {
   font-size: 12px;
-  display: in-line;
+  display: inline;
 }
 
 .flex-box {
-  display: -webkit-flex;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

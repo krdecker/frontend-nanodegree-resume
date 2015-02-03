@@ -177,6 +177,12 @@ var education = {
                 "url" : "www.udacity.com/course/cs046"
             } ,
             {
+                "title" : "Programming Foundations With Python" ,
+                "school" : "Udacity" ,
+                "date" : 2013,
+                "url" : "www.udacity.com/course/ud036"
+            } ,
+            {
                 "title" : "Intro to Computer Science" ,
                 "school" : "Udacity" ,
                 "date" : 2013,

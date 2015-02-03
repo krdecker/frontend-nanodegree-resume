@@ -254,3 +254,8 @@ span {
     display: block;
   }
 }
+
+#bottom {
+  height: 500px;
+  visibility: hidden;
+}

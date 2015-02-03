@@ -91,7 +91,7 @@ var work = {
             "title": "Logo Developer",
             "dates": "1983-1984",
             "description": "Develop application in Logo to teach children use of keyboard.",
-            "url": "http://www.imdb.com/name/nm0213858/"
+            "url": "http://www.microworlds.com/"
         }
     ] ,
 

@@ -156,31 +156,31 @@ var education = {
                 "title": "Front End Developer nano-degree programme",
                 "school": "Udacity",
                 "date": 2015 ,
-                "url": "https://www.udacity.com/nanodegrees"
+                "url": "www.udacity.com/nanodegrees"
             } ,
             {
                 "title": "Google Python 2-Day Intensive",
                 "school": "Google",
                 "date": 2014,
-                "url": "https://developers.google.com/edu/python/"
+                "url": "developers.google.com/edu/python/"
             } ,
             {
                 "title": "Web App Development",
                 "school": "Udacity",
                 "date": 2013,
-                "url": "https://www.udacity.com/course/cs253"
+                "url": "www.udacity.com/course/cs253"
             } ,
             {
                 "title" : "Intro to Java Programming" ,
                 "school" : "Udacity" ,
                 "date" : 2013,
-                "url" : "https://www.udacity.com/course/cs046"
+                "url" : "www.udacity.com/course/cs046"
             } ,
             {
                 "title" : "Intro to Computer Science" ,
                 "school" : "Udacity" ,
                 "date" : 2013,
-                "url" : "https://www.udacity.com/course/cs101"
+                "url" : "www.udacity.com/course/cs101"
             }
         ] ,
 
@@ -205,13 +205,13 @@ var education = {
             for (var onlineClass in this.onlineClasses) {
 
                 var formattedOnlineTitle = HTMLonlineTitle.replace('%data%' , this.onlineClasses[onlineClass].title)
-                                                            .replace('#' , this.onlineClasses[onlineClass].url);
+                                                            .replace('#' , 'http://' + this.onlineClasses[onlineClass].url);
                 var formattedOnlineSchool = HTMLonlineSchool.replace('%data%' , this.onlineClasses[onlineClass].school);
                 $('.on-line').append(formattedOnlineTitle + formattedOnlineSchool);
                 var formattedonlineDate = HTMLonlineDates.replace('%data%' , this.onlineClasses[onlineClass].date);
                 $('.on-line').append(formattedonlineDate);
                 var formattedOnlineURL = HTMLonlineURL.replace('%data%', this.onlineClasses[onlineClass].url)
-                                                        .replace('#', this.onlineClasses[onlineClass].url);
+                                                        .replace('#', 'http://' + this.onlineClasses[onlineClass].url);
                 $('.on-line').append(formattedOnlineURL);
             } // for onlineClasses loop
         } //display method
